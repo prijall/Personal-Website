@@ -1,5 +1,6 @@
 AOS.init();
 
+/*
 // MOOCs Cards
 
 const moocs = document.querySelector(".moocs");
@@ -133,7 +134,10 @@ const showCards = () => {
 };
 document.addEventListener("DOMContentLoaded", showCards);
 
+
+
 /* Badges*/
+/*
 
 const bagdes = document.querySelector(".badges");
 const badgesection = [
@@ -168,6 +172,8 @@ const showCards1 = () => {
   bagdes.innerHTML = output;
 };
 document.addEventListener("DOMContentLoaded", showCards1);
+
+
 
 /* Timeline Section*/
 
