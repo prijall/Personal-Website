@@ -6,6 +6,7 @@ script.type = 'text/javascript';
 script.src="https://unpkg.com/sweetalert/dist/sweetalert.min.js";
 document.body.appendChild(script);
 
+
 // Header
 
 let header = $(`
