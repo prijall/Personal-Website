@@ -1,8 +1,8 @@
-// Select the main research table container
-const researchTable = document.querySelector(".main");
+// Select the main blog table container
+const blogTable = document.querySelector(".main");
 
-// Define the array of research objects
-const research = [
+// Define the array of blog objects
+const blog = [
   {
     title: "A Batch Normalized Inference Network Keeps the KL Vanishing Away",
     authors: "Qile Zhu, Wei Bi, Xiaojiang Liu, Xiyao Ma, Xiaolin Li and Dapeng Wu",
@@ -96,11 +96,11 @@ const research = [
 // Initialize AOS (Animate On Scroll)
 AOS.init();
 
-// Function to populate the research table with data
+// Function to populate the blog table with data
 const fillData = () => {
   let output = "";
 
-  research.forEach(({ image, title, authors, conferences, researchYr, citation, abstract }) => {
+  blog.forEach(({ image, title, authors, conferences, researchYr, citation, abstract }) => {
     output += `
       <tr data-aos="zoom-in-left" class="research-card"> 
         <td class="imgCol"><img src="${image}" class="rImg" alt="Research Image"></td>
@@ -123,7 +123,7 @@ const fillData = () => {
       </tr>`;
   });
 
-  researchTable.innerHTML = output;
+  blogTable.innerHTML = output;
 
   // Add event listeners to each research card
   document.querySelectorAll('.research-card').forEach(card => {
