@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title id="research-title">Research Title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/preloader.css">
+    <link rel="stylesheet" href="assets/css/research.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/cursor.css">
+</head>
+<body>
+    <h1 id="title">Research Title</h1>
+    <p id="authors">Authors: </p>
+    <p id="conference">Conference: </p>
+    <img id="image" src="" alt="Research Image">
+    <p id="abstract">Abstract: </p>
+    <p id="citation">Citation: </p>
+    <script src="assets/js/app.js" defer></script>
+    <script src="assets/js/cursor.js" defer></script>
+    <script src="assets/js/blog.js" defer></script>
+    <script src="assets/js/dynamicTitle.js" defer></script>
+    <script>
+        // Function to get URL parameters
+        function getUrlParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+
+        // Set the content based on URL parameters
+        document.getElementById('research-title').textContent = getUrlParam('title');
+        document.getElementById('title').textContent = getUrlParam('title');
+        document.getElementById('authors').textContent = "Authors: " + getUrlParam('authors');
+        document.getElementById('conference').textContent = "Conference: " + getUrlParam('conference');
+        document.getElementById('image').src = getUrlParam('image');
+        document.getElementById('abstract').textContent = "Abstract: " + getUrlParam('abstract');
+        document.getElementById('citation').textContent = "Citation: " + getUrlParam('citation');
+    </script>
+</body>
+</html>

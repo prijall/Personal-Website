@@ -96,11 +96,23 @@ const blog = [
 // Initialize AOS (Animate On Scroll)
 AOS.init();
 
+// Function to open a research page with the provided data
+function openResearch(title, authors, conference, image, abstract, citation) {
+  const url = new URL('research1.html', window.location.origin);
+  url.searchParams.set('title', title);
+  url.searchParams.set('authors', authors);
+  url.searchParams.set('conference', conference);
+  url.searchParams.set('image', image);
+  url.searchParams.set('abstract', abstract);
+  url.searchParams.set('citation', citation);
+  window.location.href = url.toString();
+}
+
 // Function to populate the blog table with data
 const fillData = () => {
   let output = "";
 
-  blog.forEach(({ image, title, authors, conferences, researchYr, citation, abstract }) => {
+  blog.forEach(({ image, title, authors, conferences, researchYr, citation, abstract }, index) => {
     output += `
       <tr data-aos="zoom-in-left" class="research-card"> 
         <td class="imgCol"><img src="${image}" class="rImg" alt="Research Image"></td>
@@ -110,7 +122,7 @@ const fillData = () => {
               <img src="${image}" class="imgRes" alt="Research Image">
             </span>
           </div>
-          <a href="#0" class="paperTitle">${title}</a>
+          <a href="#" class="paperTitle">${title}</a>
           <div class="authors">${authors}</div>
           <div class="rConferences">${conferences}
             <div class="researchY">${researchYr}</div>
@@ -126,14 +138,10 @@ const fillData = () => {
   blogTable.innerHTML = output;
 
   // Add event listeners to each research card
-  document.querySelectorAll('.research-card').forEach(card => {
+  document.querySelectorAll('.research-card').forEach((card, index) => {
+    const { title, authors, conferences, image, abstract, citation } = blog[index];
     card.addEventListener('click', () => {
-      const additionalContent = card.querySelector('.additional-content');
-      if (additionalContent.style.display === "none") {
-        additionalContent.style.display = "block";
-      } else {
-        additionalContent.style.display = "none";
-      }
+      openResearch(title, authors, conferences, image, abstract, citation.vancouver);
     });
   });
 };

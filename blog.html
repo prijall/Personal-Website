@@ -2,36 +2,16 @@
 <html lang="en" light-mode="dark">
 
 <head>
-    <title>Prijal Khadka | Research</title>
+    <title>Prijal Khadka | blog</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <meta name="keywords" content="free portfolio template,portfolio template, portfolio website template, open source, open sourcing, contributing to open source" />
     <meta name="description" content="This project serves free and beautiful portfolio template for everyone. The sole aim of this project is to help all those who are not sure or face difficulties while trying to create the perfect portfolio for themselves. Anyone can showcase their work including moocs, education, projects, experience,etc. to the world." />
 
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-G6D61F5TL4"></script>
-
-    <!-- Robot.txt -->
-    <meta name="robots" content="index,follow" />
-    <meta name="Googlebot" content="index,follow" />
-    <meta name="AdsBot-Google" content="index,follow" />
-
-    <meta property="og:site_name" content="https://portfolio.smaranjitghose.codes/research.html">
-    <meta property="og:title" content="John Doe | Research">
-    <meta property="og:description" content="This project serves free and beautiful portfolio template for everyone. Anyone can showcase their work including moocs, education, projects, experience,etc. to the world.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://portfolio.smaranjitghose.codes/research.html">
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:site" content="https://portfolio.smaranjitghose.codes/research.html">
-
-    <meta name="application-name" content="John Doe | Research" />
-    <meta name="apple-mobile-web-app-title" content="John Doe | Research" />
-    <meta name="summary" content="An open source project aimed at providing free and beautiful templates to everyone for building their portfolio websites and showcase their work to the world." />
+    <!-- Styles and Scripts -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300&display=swap" rel="stylesheet">
-
-    <!--Import animation.css-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
     <script src='https://kit.fontawesome.com/a076d05399.js'></script>
     <link rel="stylesheet" href="assets/css/preloader.css">
@@ -40,21 +20,9 @@
     <link rel="stylesheet" href="assets/css/cursor.css">
     <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
     <link id='favicon' rel="icon" href="assets/images/favicon.png" type="image/png">
-    <!--Favicon-->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <!--For Dark/Light mode Toggle-->
-    <script src="https://code.iconify.design/1/1.0.4/iconify.min.js"></script>
     <script defer src="./assets/js/dynamicTitle.js"></script>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-M11CMZ12Q"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-M11CMZ12Q');
-    </script>
 </head>
 
 <body class="no-scroll-preload">
@@ -68,8 +36,7 @@
         </div>
     </div>
 
-    <!--Dynamic Nav Bar-->
-
+    <!-- Dynamic Nav Bar -->
     <div class="container research-upper pt-5" style="width: 100%; min-height: 80%;">
         <section class="txt-bottom">
             <div class="px-3 pt-5">
@@ -80,7 +47,6 @@
                             My area of interests are AI, Blockchain, Machine Learning and Computer Vision.
                         </p>
                     </div>
-
                     <div class="col-md-6" style="margin-top: 45px;">
                         <svg xmlns="http://www.w3.org/2000/svg" id="verapc" width="100%" baseProfile="tiny" class="svgmate" version="1" viewBox="800 300 1220 1080">
                             <!-- SVG content -->
@@ -89,6 +55,13 @@
                 </div>
             </div>
         </section>
+
+        <!-- Research Cards -->
+        <div class="research-card" onclick="openResearch('Research Title 1', 'Author 1, Author 2', 'Conference Name, Year', 'assets/images/research-image1.jpg', 'Detailed abstract goes here...', 'Full citation goes here...')">
+            <h3>Research Title 1</h3>
+            <p>Authors: Author 1, Author 2</p>
+        </div>
+        <!-- Repeat similar divs for other research cards -->
 
         <div class="researchMainWrapper">
             <div class="container">
@@ -106,7 +79,6 @@
     <!--Cursor-->
     <div class="cursor-dot-outline"></div>
     <div class="cursor-dot"></div>
-    <!-- Dynamic footer section -->
 
     <!-- script -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
@@ -115,6 +87,19 @@
     <script src="assets/js/cursor.js"></script>
     <script src="assets/js/blog.js"></script>
 
+    <!-- Inline Script for openResearch Function -->
+    <script>
+        function openResearch(title, authors, conference, image, abstract, citation) {
+            const url = new URL('research1.html', window.location.origin);
+            url.searchParams.set('title', title);
+            url.searchParams.set('authors', authors);
+            url.searchParams.set('conference', conference);
+            url.searchParams.set('image', image);
+            url.searchParams.set('abstract', abstract);
+            url.searchParams.set('citation', citation);
+            window.location.href = url.toString();
+        }
+    </script>
 </body>
 
 </html>
